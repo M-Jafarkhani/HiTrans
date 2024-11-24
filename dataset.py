@@ -95,7 +95,7 @@ def load_data(input_max):
             _emo_label = [vocab.label2id[x["emotion"]] for x in dia]
             assert len(_emo_label) == len(_cls_index)
 
-            _spk_label = np.zeros((len(dia), len(dia)), dtype=np.long)
+            _spk_label = np.zeros((len(dia), len(dia)), dtype=np.int64)
             for i in range(len(dia)):
                 for j in range(len(dia)):
                     _spk_label[i, j] = dia[i]["speaker"] == dia[j]["speaker"]

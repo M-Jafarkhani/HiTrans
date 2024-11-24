@@ -163,7 +163,7 @@ if __name__ == '__main__':
     logger = utils.get_logger("./log/HiTrans_{}.txt".format(time.strftime("%m-%d_%H-%M-%S")))
     logger.info(args)
 
-    torch.cuda.set_device(args.device)
+    #torch.cuda.set_device(args.device)
 
     seed = args.seed
     random.seed(seed)

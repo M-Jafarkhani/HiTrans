@@ -1,0 +1,4 @@
+2024-11-24 11:41:08 - [line:164] - INFO: Namespace(d_model=768, d_ff=768, heads=6, layers=1, input_max_length=512, hidden_dim=768, dropout=0.5, lr=5e-05, bert_lr=1e-05, weight_decay=1e-05, max_grad_norm=1.0, epochs=20, batch_size=8, alpha=0.95, seed=123, device=0, evaluate=False)
+2024-11-24 11:41:08 - [line:174] - INFO: Loading data...
+2024-11-24 11:41:08 - [line:1051] - DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2024-11-24 11:41:08 - [line:546] - DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/11" 200 0
