@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from transformers import BertModel
+from transformers import BertModel,BertConfig
 from models.Trans import TransformerEncoder
 
 
@@ -8,7 +8,9 @@ class HiTrans(nn.Module):
     def __init__(self, hidden_dim, emotion_class_num, d_model, d_ff, heads, layers, dropout=0, input_max_length=512):
         super(HiTrans, self).__init__()
         self.input_max_length = input_max_length
-        self.bert = BertModel.from_pretrained('bert-base-uncased')
+        config = BertConfig.from_pretrained('bert-base-uncased', 
+        output_hidden_states=True, output_attentions=True)
+        self.bert = BertModel.from_pretrained('bert-base-uncased',return_dict=False)
         self.encoder = TransformerEncoder(d_model, d_ff, heads, layers, 0.1)
 
         self.emo_output_layer = nn.Sequential(

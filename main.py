@@ -151,7 +151,7 @@ if __name__ == '__main__':
     parser.add_argument('--bert_lr', type=float, default=1e-5)
     parser.add_argument('--weight_decay', type=float, default=1e-5)
     parser.add_argument('--max_grad_norm', type=float, default=1.0)
-    parser.add_argument('--epochs', type=int, default=20)
+    parser.add_argument('--epochs', type=int, default=5)
     parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--alpha', type=float, default=0.95)
     parser.add_argument('--seed', type=int, default=123)
