@@ -108,7 +108,7 @@ def load_data(input_max):
         return MyDataset(dia_input, emo_label, spk_label, cls_index)
 
     return (
-               processing_data('./data/train_sent_emo.csv'),
-               processing_data('./data/dev_sent_emo.csv'),
-               processing_data('./data/test_sent_emo.csv')
+               processing_data('/content/HiTrans/data/train_sent_emo.csv'),
+               processing_data('/content/HiTrans/data/dev_sent_emo.csv'),
+               processing_data('/content/HiTrans/data/test_sent_emo.csv')
            ), vocab

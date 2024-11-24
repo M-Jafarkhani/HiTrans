@@ -160,10 +160,10 @@ if __name__ == '__main__':
     parser.add_argument('--evaluate', action='store_true')
     args = parser.parse_args()
 
-    logger = utils.get_logger("./log/HiTrans_{}.txt".format(time.strftime("%m-%d_%H-%M-%S")))
+    logger = utils.get_logger("/content/HiTrans/log/HiTrans_{}.txt".format(time.strftime("%m-%d_%H-%M-%S")))
     logger.info(args)
 
-    #torch.cuda.set_device(args.device)
+    torch.cuda.set_device(args.device)
 
     seed = args.seed
     random.seed(seed)
@@ -194,7 +194,7 @@ if __name__ == '__main__':
     trainer = Trainer(model)
 
     if args.evaluate:
-        trainer.load("./checkpoint/model.pkl")
+        trainer.load("/content/HiTrans/checkpoint/model.pkl")
         dev_loss, dev_f1 = trainer.eval(dev_loader)
         logger.info("Dev Loss: {:.4f} F1: {:.4f}".format(dev_loss, dev_f1))
         test_loss, test_f1 = trainer.eval(test_loader)
@@ -211,6 +211,6 @@ if __name__ == '__main__':
             logger.info("---------------------------------")
             if best_f1 < dev_f1:
                 best_f1 = dev_f1
-                trainer.save("./checkpoint/model.pkl")
+                trainer.save("/content/HiTrans/checkpoint/model.pkl")
 
         logger.info("Best Dev F1: {:.4f}".format(best_f1))
